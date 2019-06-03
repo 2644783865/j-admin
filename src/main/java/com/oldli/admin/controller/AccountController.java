@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-
 public class AccountController {
     @Autowired
     private AccountService accountService;
 
     @RequestMapping(value = "/api/account/query", method = RequestMethod.GET)
     @ResponseBody
-    public List<Account> Query(@RequestBody AccountQueryModel model) {
+    public List<Account> Query(AccountQueryModel model) {
 
         List<Account> list = accountService.query(model);
         return list;
